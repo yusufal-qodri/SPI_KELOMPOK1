@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Iklim Bumi — Perdinan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="hud">
+    <!-- SCENE TITLE -->
+    <div id="scene-title">Bumi dalam Keseimbangan</div>
+
+    <!-- NAV — 6 scenes sesuai PDF -->
+    <div id="nav">
+      <div class="nav-pill active" style="--c:#f0a500" onclick="go(0)">
+        <div class="nav-dot"></div>Komponen Sistem Iklim
+      </div>
+      <div class="nav-pill" style="--c:#4fc3f7" onclick="go(1)">
+        <div class="nav-dot"></div>Atmosfer & Sirkulasi
+      </div>
+      <div class="nav-pill" style="--c:#0288d1" onclick="go(2)">
+        <div class="nav-dot"></div>Hidrosfer & Siklus Air
+      </div>
+      <div class="nav-pill" style="--c:#90caf9" onclick="go(3)">
+        <div class="nav-dot"></div>Kriosfer & Tutupan Es
+      </div>
+      <div class="nav-pill" style="--c:#43a047" onclick="go(4)">
+        <div class="nav-dot"></div>Biosfer & Siklus Karbon
+      </div>
+      <div class="nav-pill" style="--c:#ffd600" onclick="go(5)">
+        <div class="nav-dot"></div>Keseimbangan Energi
+      </div>
+    </div>
+
+    <!-- CONTROLS (dynamically built by JS) -->
+    <div id="controls"></div>
+
+    <!-- INFO CARD -->
+    <div id="info-card">
+      Pilih scene di kiri untuk mulai eksplorasi sistem iklim Bumi.<br>
+      <span style="font-size:0.6rem;opacity:0.5">Sumber: Understanding Earth, 6th Ed. | IPCC 2007 | Perdinan</span>
+    </div>
+
+    <!-- STATS — real-time climate indicators -->
+    <div id="stats">
+      <div class="stat-item">
+        <div class="stat-bar"><div class="stat-fill" id="sf-temp" style="background:#ff7043;width:5%"></div></div>
+        <span class="stat-val" id="sv-temp">+0.0°C</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-bar"><div class="stat-fill" id="sf-co2" style="background:#ff8a65;width:8%"></div></div>
+        <span class="stat-val" id="sv-co2">280ppm</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-bar"><div class="stat-fill" id="sf-ice" style="background:#90caf9;width:100%"></div></div>
+        <span class="stat-val" id="sv-ice">100%</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-bar"><div class="stat-fill" id="sf-forest" style="background:#66bb6a;width:100%"></div></div>
+        <span class="stat-val" id="sv-forest">100%</span>
+      </div>
+    </div>
+
+    <div id="tip"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
